@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Name Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 10px; margin: 10px 0; width: 100%; max-width: 400px; }
+    #result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Project Name Generator</h1>
+  <input type="text" id="projectIdea" placeholder="Enter your project idea..." />
+  <button onclick="generateName()">Generate Name</button>
+  <div id="result"></div>
+
+  <script>
+    const API_KEY = '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'; // Replace with your OpenRouter key
+    const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+
+    async function generateName() {
+      const idea = document.getElementById('projectIdea').value.trim();
+      if (!idea) return alert("Please enter a project idea.");
+
+      const prompt = `You are a creative assistant. Based on the following description, generate a unique and catchy project name. Do not include quotes or explanations. Just the name. Project idea: ${idea}`;
+
+      const requestBody = {
+        model: "mistralai/mixtral-8x7b-instruct",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 50
+      };
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${API_KEY}`
+          },
+          body: JSON.stringify(requestBody)
+        });
+
+        if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+        const data = await response.json();
+        const name = data.choices?.[0]?.message?.content?.trim();
+        document.getElementById('result').textContent = name || "No name generated.";
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('result').textContent = 'Failed to generate name.';
+      }
+    }
+  </script>
+</body>
+</html>
