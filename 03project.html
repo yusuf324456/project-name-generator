@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduRoots | Learn, Grow, Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: #fefdf9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #2e7d32, #43a047);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.5rem 0;
+    }
+
+    nav a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #fffde7;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #f9a825;
+    }
+
+    .course-list,
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+
+    .card p {
+      flex-grow: 1;
+    }
+
+    .card button,
+    form button {
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      padding: 0.6rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form {
+      background: #f0f4c3;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer small {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EduRoots</h1>
+    <p>Where Learning Takes Root and Communities Grow</p>
+  </header>
+
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#register">Register</a>
+    <a href="#downloads">Offline Access</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to EduRoots 🌱</h2>
+    <p>Empowering learners in rural areas with knowledge, skills, and opportunity—online or offline, anytime, anywhere.</p>
+  </section>
+
+  <section id="courses">
+    <h2>🎓 Available Courses</h2>
+    <div class="course-list">
+      <div class="card">
+        <h3>🌾 Sustainable Farming</h3>
+        <p>Free | Learn how to improve yields with eco-friendly methods.</p>
+        <button>Enroll Now</button>
+      </div>
+      <div class="card">
+        <h3>🔧 Phone Repair Basics</h3>
+        <p>$1 | Step-by-step repair techniques to start your own service.</p>
+        <button>Enroll Now</button>
+      </div>
+      <div class="card">
+        <h3>🩺 Family First Aid</h3>
+        <p>Free | Essential health knowledge for safe households.</p>
+        <button>Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>📝 Quick Registration</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <select required>
+        <option value="">Select Your Region</option>
+        <option value="north">Northern Region</option>
+        <option value="south">Southern Region</option>
+        <option value="east">Eastern Region</option>
+        <option value="west">Western Region</option>
+      </select>
+      <button type="submit">Join the Learning Community</button>
+    </form>
+  </section>
+
+  <section id="downloads">
+    <h2>📥 Offline Study Kits</h2>
+    <p>Download free PDFs and learning materials to use without internet.</p>
+    <div class="downloads">
+      <div class="card">
+        <h3>🌿 Farming Guide PDF</h3>
+        <a href="downloads/farming_guide.pdf" download>
+          <button>Download</button>
+        </a>
+      </div>
+      <div class="card">
+        <h3>🛠 Phone Repair Handbook</h3>
+        <a href="downloads/repair_guide.pdf" download>
+          <button>Download</button>
+        </a>
+      </div>
+      <div class="card">
+        <h3>🧑‍⚕ First Aid Manual</h3>
+        <a href="downloads/first_aid.pdf" download>
+          <button>Download</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🌍 EduRoots - Because education should grow everywhere.</p>
+    <small>&copy; 2025 EduRoots NGO | Powered by Hope + Code</small>
+  </footer>
+
+</body>
+</html>
